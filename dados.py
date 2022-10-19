@@ -39,7 +39,8 @@ class Dadosbd:
         comando = f'SELECT * FROM agenda WHERE nome LIKE "{nome}%"'
         self.cursor.execute(comando)
         resultado = self.cursor.fetchall()
-        return resultado
+        for i, no, nu in resultado:
+            print(f' id: {i}  |  nome: {no}  |  numero: {nu} ')
 
     # def __del__(self):
     #     self.cursor.close()
@@ -50,9 +51,6 @@ class Dadosbd:
 if __name__ == "__main__":
 
     cadastro = Dadosbd()
-    dados = cadastro.vizualizar(nome='junior')
-    
-    for i, e , a in dados:
-        print(f' {i} |  {e}   |   {a}')
-    
+    cadastro.vizualizar(nome='junior')
+   
     
