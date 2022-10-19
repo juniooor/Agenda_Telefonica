@@ -17,18 +17,27 @@ while True:
             :''')
 
     if opcao == '1':
+        nome = input('Insira o nome do contato: ')
+        numero = input(' insira o numero do contato: ')
+        while True:
+            confirme = input(f'você confirma nome: {nome} e numero: {numero} ?[SIM/NAO] ').upper()
+            if confirme == 'SIM':
+                funcao.inserir(nome, numero)
+                break
+            else:
+                nome = input('Insira o nome do contato: ')
+                numero = input(' insira o numero do contato: ')
+
         print('inserindo contato')
+
     elif opcao == '2':
         print('excluindo contato')
     elif opcao == '3':
         print('editando contato')
     elif opcao == '4':
-        sleep(2)
         nome = input('Informe o nome do contato:  ')
         print('Visualizando contato...')
-        sleep(2)
         vizualizar = funcao.vizualizar(nome=nome)
-        sleep(4)
     elif opcao == '5':
         print('saindo')
         break
