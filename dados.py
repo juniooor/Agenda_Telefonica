@@ -41,6 +41,7 @@ class Dadosbd:
         resultado = self.cursor.fetchall()
         for i, no, nu in resultado:
             print(f' id: {i}  |  nome: {no}  |  numero: {nu} ')
+            
 
     # def __del__(self):
     #     self.cursor.close()

@@ -31,7 +31,18 @@ while True:
         print('inserindo contato')
 
     elif opcao == '2':
-        print('excluindo contato')
+        contato = input('Qual o nome do contato que você quer excluir?: ')
+        vizualizar = funcao.vizualizar(contato)
+        
+        while True:
+            try:
+                ids = int(input(f'\n Qual ID do contato que você quer excluir?: '))
+                if isinstance(ids, int) == True:
+                    break
+            except ValueError as e:
+                print('você informou um id invalido por favor digite corretamente ')
+        funcao.excluir(ids)
+        print('excluindo contato...')
     elif opcao == '3':
         print('editando contato')
     elif opcao == '4':
