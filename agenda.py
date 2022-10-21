@@ -58,7 +58,7 @@ while True:
         while True:
             confirme = input(f'você confirma nome: {nome} e numero: {numero} ?[SIM/NAO] ').upper()
             if confirme == 'SIM':
-                funcao.inserir(nome, numero)
+                funcao.editar(nome=nome, numero=numero, idagenda=ids)
                 break
             else:
                 nome = input('Insira o nome do contato: ')
